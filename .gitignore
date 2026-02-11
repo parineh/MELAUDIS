@@ -1,0 +1,9 @@
+*.log
+.env
+*/venv/
+*.tmp
+*.code-workspace
+*.pdf
+*.zip
+/OUT/
+/dataset/

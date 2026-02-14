@@ -28,7 +28,7 @@ def search_files_by_strings(directory, search_strings):
 
 # Example usage
 if __name__ == "__main__":
-    directory_path = r"C:\_DS\_A_MYDS\MultiVehicle Analysis\1V"
+    directory_path = r"C:\\Users\\imal\\OneDrive - Politecnico di Milano\\2025-2026\\2 semestre - Centrale Supelec\\Project S8\\27115870"
     
     # User-specified search strings
     search_strings = ["Swanston9","FF", "Car", "1V"]  # Example: search for Swanston9 street, FF traffic, Car, 1V

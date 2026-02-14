@@ -6,19 +6,19 @@
 #
 # Import essential libraries for data handling, visualization, and machine learning
 import numpy as np
-import pandas as pd
+#import pandas as pd
 import os
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-import seaborn as sn
+#import seaborn as sn
 import cv2
 import tensorflow as tf
-from tqdm import tqdm
+#from tqdm import tqdm
 
 # Set Seaborn font scale for better visualization
-sn.set(font_scale=1.4)
+#sn.set(font_scale=1.4)
 
 # %% Data Classes
 # Define class labels for binary classification
@@ -38,7 +38,7 @@ def load_data():
         output: A list containing (images, labels) tuples for Train and Test datasets.
     """
     # Define the dataset directory and categories
-    DIRECTORY = r" \ Path to audio files\BG_and_Veh"
+    DIRECTORY = r"C:\\Users\\imal\\OneDrive - Politecnico di Milano\\2025-2026\2 semestre - Centrale Supelec\\Project_S8\\dataset_with_MelS_organized"
     CATEGORIES = ["Train", "Test"]
 
     output = []
@@ -88,7 +88,7 @@ print(f"Test Data Size: {len(test_images)}")
 # %% Define the CNN Model
 model = tf.keras.Sequential([
     # Layer 1
-    tf.keras.layers.Conv2D(128, (3, 3), activation='relu', input_shape=(163, 279, 3)),
+    tf.keras.layers.Conv2D(128, (3, 3), activation='relu', input_shape=(231, 387, 3)), #input_shape=(163, 279, 3)
     tf.keras.layers.Dropout(0.3),
     tf.keras.layers.MaxPooling2D(2, 2),
 

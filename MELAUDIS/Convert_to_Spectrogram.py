@@ -8,14 +8,15 @@ import numpy as np
 
 # %% Paths and Parameters
 # Define paths for audio files and output directory
-BG_path = r'PATH TO BACKGROUND AUDIO\BG_SW\\'  # Background audio files
-Car_path = r'PATH TO MC AUDIO\MC\\'    # Vehicle audio files
-Main_Pic_path = r"PATH TO SAVE LMS OF MC\MC_IMAGES\\"  # Directory to save spectrograms
+#BG_path = r'PATH TO BACKGROUND AUDIO\BG_SW\\'  # Background audio files
+Car_path = r'..\\27115870\\MELAUDIS_Vehicles\\Final_Veh\\Fitz1'    # Vehicle audio files
+Main_Pic_path = r"..\\OUT\\"  # Directory to save spectrograms
 
 # Parameters for audio processing
 FRAME_SIZE = 512  # FFT window size
 HOP_SIZE = 64     # Hop length for STFT
 No_of_Samples = 5  # Number of samples to process
+process_all = False
 
 # %% Functions
 
@@ -55,6 +56,9 @@ for filename in os.listdir(Car_path):
     if filename != 'desktop.ini':  # Skip system files
         file_path = os.path.join(Car_path, filename)
         
+        if not process_all and i >= No_of_Samples:
+            break
+
         if os.path.isfile(file_path):
             # Load and normalize the audio
             audio_car_unormed, sample_rate = librosa.load(file_path, sr=None)
@@ -76,3 +80,5 @@ for filename in os.listdir(Car_path):
             print(f"Processed file {i}: {filename}")
 
 print(f"Total files processed: {i}")
+
+# %%

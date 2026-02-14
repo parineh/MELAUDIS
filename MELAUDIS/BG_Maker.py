@@ -4,7 +4,7 @@ import soundfile as sf
 import csv
 import numpy as np
 
-def extract_audio_segment(input_path, center_sec, range_sec, dest_path):
+def extract_audio_segment(center_sec, sample_rate, range_sec, dest_path):
     """
     Extracts a stereo audio segment from an input audio file and saves it to a specified destination.
     
@@ -62,7 +62,7 @@ def process_csv_and_extract_segments(csv_file_path, wav_file_path, dest_path, ra
             center_sec = calculate_center_sec(row)
             
             # Extract the audio segment
-            extract_audio_segment(wav_file_path, center_sec, range_sec, file_name)
+            extract_audio_segment(center_sec, sample_rate, range_sec, file_name)
             row_count += 1
 
     print(f"Total Rows Processed: {row_count}")
